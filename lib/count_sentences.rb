@@ -24,16 +24,6 @@ class String
     count_array.each do |word|
       punc.each {|p| count += 1 if word[-1] == p}
     end
-    # count_array.each do |word|
-    #   case word[-1]
-    #   when "."
-    #     count += 1
-    #   when "!"
-    #     count += 1
-    #   when "?"
-    #     count += 1
-    #   end
-    # end
     count
   end
 
