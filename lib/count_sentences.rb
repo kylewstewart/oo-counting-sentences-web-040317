@@ -14,19 +14,26 @@ class String
     self[-1] == "!"
   end
 
+  def punc
+    [".", "!", "?"]
+  end
+
   def count_sentences
     count = 0
     count_array = self.split(' ')
     count_array.each do |word|
-      case word[-1]
-      when "."
-        count += 1
-      when "!"
-        count += 1
-      when "?"
-        count += 1
-      end
+      punc.each {|p| count += 1 if word[-1] == p}
     end
+    # count_array.each do |word|
+    #   case word[-1]
+    #   when "."
+    #     count += 1
+    #   when "!"
+    #     count += 1
+    #   when "?"
+    #     count += 1
+    #   end
+    # end
     count
   end
 
